@@ -1,0 +1,26 @@
+body {
+	background: white url("img/arka.jpg");
+}
+
+
+.pull-center{
+	float: none;
+	margin:0 auto;
+}
+/*
+.user-profile-img{
+	height:50px;
+}
+*/
+.glyphicon-star {
+	color: #CCCCCC;
+	font-size: 16px;
+}
+
+.glyphicon-star.active {
+	color: #FDB230;
+}
+
+.user-profile {
+	border:1px solid;
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+	Post Update
+{% endblock %}
+
+{% block icerik %}
+	<div class="row" style="margin-top: 30px;">
+		<div class="col-lg-8 col-lg-offset-3">
+		<h2 class="page-header">Post Update</h2>
+			<form action="{% url 'post_update' blog.slug %}" enctype="multipart/form-data" method="post">
+				{% csrf_token %}
+				{% include 'blog\include\form-include.html' %}
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-10">
+							<input type="submit" value="Güncelle" class="btn pull-right btn-sm btn-success" >
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

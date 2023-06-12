@@ -1,0 +1,11 @@
+{% extends 'auths/profile/user_profile.html' %}
+
+
+{% block profil_icerik %}
+
+	
+	<div class="caption"><br>
+		{{ user.userprofile.bio|linebreaksbr }}
+	</div>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+from django.urls import path
+from django.conf.urls import url
+from .views import kullanici_takip_et_cikar
+
+urlpatterns = [
+    path('takiplesme_sistemi/', kullanici_takip_et_cikar, name='kullanici_takip_et_cikar'),
+]

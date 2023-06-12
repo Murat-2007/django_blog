@@ -1,0 +1,30 @@
+{% extends 'auths/profile/user_profile_base.html' %}
+{% load static %}
+
+{% block profil_icerik %}
+	<div class="row" style="margin-top: 20px;">
+		<div class="col-lg-12">
+			{% for post in blog_list %}
+				<div class="row">
+				<div class="col-lg-12">
+					<h2><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+						<small>
+							{% if post.yayin_taslak == 'taslak' %}
+								<span style="font-size:15px" class="label label-danger">{{ post.get_yayin_taslak_display }}</span>
+							{% else %}
+								<span style="font-size:15px" class="label label-primary">{{ post.get_yayin_taslak_display }}</span>
+							{% endif %}
+						</small>
+						<small class="pull-right">
+							<span class="glyphicon glyphicon-time"></span>
+							{{ post.created_date }}
+						</small>
+					</h2>
+					<img src="{{ post.get_image }}" class="img-responsive">
+					<p>{{ post.content|safe|truncatewords:50 }}</p>
+				</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
